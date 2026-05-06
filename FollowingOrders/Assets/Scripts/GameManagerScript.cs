@@ -35,7 +35,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void OpenCredits()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("SceneCredits");
     }
 
     public void MainMenu()
