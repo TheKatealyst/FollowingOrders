@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1891179575653379488, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: -240
       objectReference: {fileID: 0}
     - target: {fileID: 1891179575653379488, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -214,6 +214,12 @@ PrefabInstance:
     - target: {fileID: 1891179575653379488, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913533606982297595, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
+      propertyPath: m_text
+      value: '[ Focus on the controls ]
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 2913533606982297595, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_fontSize
@@ -237,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667626727396829039, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_Name
-      value: ButtonChange (1)
+      value: SceneChange
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -245,11 +251,11 @@ PrefabInstance:
       objectReference: {fileID: 469350440}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Choice1bFunct
+      value: SceneChange2
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Scene1Dialogue, Assembly-CSharp
+      value: Scene1TrainDialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -653,22 +659,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 469350435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999a334577751284692cd86a4c9bb4cc, type: 3}
+  m_Script: {fileID: 11500000, guid: c11515c74193a7a4d8ac245350d50a51, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scene1Dialogue
-  primeInt: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Scene1TrainDialogue
+  primeInt: 0
   Char1name: {fileID: 3540360946475358470}
   Char1speech: {fileID: 3540360946475358469}
-  Char2name: {fileID: 0}
   Char2speech: {fileID: 3540360946475358467}
   DialogueDisplay: {fileID: 3540360946475358466}
-  ArtChar1a: {fileID: 0}
   ArtBG1: {fileID: 1482252057}
   Choice1a: {fileID: 4577699482855634281}
-  Choice1b: {fileID: 193592189}
-  NextScene1Button: {fileID: 718117725}
-  NextScene2Button: {fileID: 1832709954}
+  Choice1b: {fileID: 718117725}
+  NextScene1Button: {fileID: 1832709954}
+  NextScene2Button: {fileID: 193592189}
   nextButton: {fileID: 2644441715668080688}
+  CharBox: {fileID: 1690373807}
 --- !u!1 &477013366
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1891179575653379488, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66
+      value: -237
       objectReference: {fileID: 0}
     - target: {fileID: 1891179575653379488, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -843,6 +848,10 @@ PrefabInstance:
     - target: {fileID: 1891179575653379488, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913533606982297595, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
+      propertyPath: m_text
+      value: '[ Listen to hq guide you ]'
       objectReference: {fileID: 0}
     - target: {fileID: 2913533606982297595, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_fontSize
@@ -874,11 +883,11 @@ PrefabInstance:
       objectReference: {fileID: 469350440}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SceneChange1
+      value: Next
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Scene1Dialogue, Assembly-CSharp
+      value: Scene1TrainDialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1028,6 +1037,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482252057}
   m_CullTransparentMesh: 1
+--- !u!1 &1690373807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7224626345299125625, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
+  m_PrefabInstance: {fileID: 3540360946475358465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1832709953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1151,7 +1165,7 @@ PrefabInstance:
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 469350440}
+      objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SceneChange2
@@ -1310,7 +1324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205449908590845700, guid: b5aa9ea8444950d48b3a2517cbd151b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Scene1Dialogue, Assembly-CSharp
+      value: Scene1TrainDialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4205449908590845700, guid: b5aa9ea8444950d48b3a2517cbd151b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1346,6 +1360,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 7d3e881fbbcdac3448d3ebdc93560d52, type: 2}
+    - target: {fileID: 267611633529815295, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
+      propertyPath: m_overflowMode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 267611633529815295, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -1443,9 +1461,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7d3e881fbbcdac3448d3ebdc93560d52, type: 2}
     - target: {fileID: 2330518875885592329, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
+      propertyPath: m_overflowMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330518875885592329, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 3805116333263717359, guid: 7d3e881fbbcdac3448d3ebdc93560d52, type: 2}
+    - target: {fileID: 2330518875885592329, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2330518875885592329, guid: 8aa658234b4e2404faa014946acc9b0a, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -1636,11 +1662,11 @@ PrefabInstance:
       objectReference: {fileID: 469350440}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Choice1aFunct
+      value: Next
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Scene1Dialogue, Assembly-CSharp
+      value: Scene1TrainDialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8578801796104394854, guid: f0896fae65d892e409f96bcab58633b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
