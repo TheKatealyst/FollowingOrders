@@ -14,6 +14,8 @@ public class Scene1TrainDialogue : MonoBehaviour
     public TMP_Text Char1name;
     public TMP_Text Char1speech;
     public TMP_Text Char2speech;
+    public GameObject ScrollViewChar1;
+    public GameObject ScrollViewChar2;
     //public TMP_Text Char3name;
     //public TMP_Text Char3speech;
     public GameObject DialogueDisplay;
@@ -102,6 +104,7 @@ public class Scene1TrainDialogue : MonoBehaviour
         }
         else if (primeInt == 4)
         {
+            ScrollViewChar2.SetActive(false);
             Choice1b.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
@@ -113,6 +116,7 @@ public class Scene1TrainDialogue : MonoBehaviour
 
         else if (primeInt == 5)
         {
+            ScrollViewChar2.SetActive(true);
             DialogueDisplay.SetActive(true);
             Char2speech.text = "";
             Char1name.text = "Commanding Officer";
