@@ -11,6 +11,7 @@ public class Scene1Panel : MonoBehaviour
     // These are the script variables.
     // For more character images / buttons, copy & renumber the variables:
     public int primeInt = 1;        // This integer drives game progress!
+    public int CheckedOutFunctions = 0; //This interger checks the players tutorial porgress.
     public TMP_Text Char1name;
     public TMP_Text Char1speech;
     public GameObject DialogueDisplay;
@@ -74,7 +75,7 @@ public class Scene1Panel : MonoBehaviour
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
-            Char1name.text = "";
+            Char1name.text = "Commanding Officer";
             Char1speech.text = "//KwZzwt..// \"Welcome to your control deck, this will be your own seat of power!\"\"Here are the functions you are able to perform from here:\"\r\n";
         }
         else if (primeInt == 2)
@@ -122,19 +123,6 @@ public class Scene1Panel : MonoBehaviour
             DialogueDisplay.SetActive(true);
             Char1name.text = "Commanding Officer";
             Char1speech.text = "\"Let's Select the Central station as at that will be your upcoming destination.\"\r\nSet location to:\r\n";
-        }
-        else if (primeInt == 13)
-        {
-            MstationButton.SetActive(false);
-            RhabourButton.SetActive(false);
-            TAtempLocButton.SetActive(false);
-            Return2ControlButton.SetActive(true);
-            CharBox.SetActive(true);
-            nextButton.SetActive(false);
-            allowSpace = false;
-            DialogueDisplay.SetActive(true);
-            Char1name.text = "Commanding Officer";
-            Char1speech.text = "\"Well done. Go back to your overview.\" //kZzzt..//.";
         }
         else if (primeInt == 20)
         {
@@ -201,11 +189,24 @@ public class Scene1Panel : MonoBehaviour
         {
             Return2ControlButton.SetActive(true);
             CharBox.SetActive(true);
-            nextButton.SetActive(true);
-            allowSpace = true;
+            nextButton.SetActive(false);
+            allowSpace = false;
             DialogueDisplay.SetActive(true);
             Char1name.text = "Commanding Officer";
             Char1speech.text = "\"Very good performance, for now you don't need to do anything\" //kZzzt..// the radio fades back out.";
+        }
+        else if (primeInt == 41)
+        {
+            ChoiceCargo.SetActive(false);
+            ChoiceRoute.SetActive(false);
+            ChoiceMaintenance.SetActive(false);
+            NextScene1Button.SetActive(true);
+            CharBox.SetActive(true);
+            nextButton.SetActive(false);
+            allowSpace = false;
+            DialogueDisplay.SetActive(true);
+            Char1name.text = "Commanding Officer";
+            Char1speech.text = "\"Ah, Looks like you are ready to take off for central station, we'll contact you once you have arrived. Godspeed my friend!\"\r\n";
         }
 
         //Please do NOT delete this final bracket that ends the Next() function:
@@ -214,6 +215,10 @@ public class Scene1Panel : MonoBehaviour
     // FUNCTIONS FOR BUTTONS TO ACCESS (Choice #1 and SceneChanges)
     public void Choice1aFunct()
     {
+        CheckedOutFunctions += 1;
+        ChoiceCargo.SetActive(false);
+        ChoiceMaintenance.SetActive(false);
+        ChoiceRoute.SetActive(false);
         primeInt = 9;
         CharBox.SetActive(true);
         nextButton.SetActive(true);
@@ -224,8 +229,12 @@ public class Scene1Panel : MonoBehaviour
     }
     public void Choice1bFunct()
     {
+        CheckedOutFunctions += 1;
+        ChoiceCargo.SetActive(false);
+        ChoiceMaintenance.SetActive(false);
+        ChoiceRoute.SetActive(false);
         primeInt = 19;
-        CharBox.SetActive(true);
+        CharBox.SetActive(false);
         nextButton.SetActive(true);
         allowSpace = true;
         DialogueDisplay.SetActive(true);
@@ -234,8 +243,12 @@ public class Scene1Panel : MonoBehaviour
     }
     public void Choice1cFunct()
     {
+        CheckedOutFunctions += 1;
+        ChoiceCargo.SetActive(false);
+        ChoiceMaintenance.SetActive(false);
+        ChoiceRoute.SetActive(false);
         primeInt = 29;
-        CharBox.SetActive(true);
+        CharBox.SetActive(false);
         nextButton.SetActive(true);
         allowSpace = true;
         DialogueDisplay.SetActive(true);
@@ -261,6 +274,38 @@ public class Scene1Panel : MonoBehaviour
         DialogueDisplay.SetActive(true);
         Char1name.text = "Commanding Officer";
         Char1speech.text = "\"You do not yet have permission to travel to this location.\"";
+    }
+    public void ReturnFunct()
+    {
+        Return2ControlButton.SetActive(false);
+        ChoiceCargo.SetActive(true);
+        ChoiceMaintenance.SetActive(true);
+        ChoiceRoute.SetActive(true);
+        primeInt = 40;
+        CharBox.SetActive(true);
+        nextButton.SetActive(false);
+        allowSpace = false;
+        DialogueDisplay.SetActive(true);
+        Char1name.text = "Commanding Officer";
+        Char1speech.text = "//..KwzzTz// \"Alright, Be sure to examine your other equipment.\"";
+        if (CheckedOutFunctions >= 3)
+        {
+            Next();
+        }
+    }
+    public void CentralStation()
+    {
+        MstationButton.SetActive(false);
+        RhabourButton.SetActive(false);
+        TAtempLocButton.SetActive(false);
+        Return2ControlButton.SetActive(true);
+        CharBox.SetActive(true);
+        nextButton.SetActive(false);
+        allowSpace = false;
+        DialogueDisplay.SetActive(true);
+        Char1name.text = "Commanding Officer";
+        Char1speech.text = "\"Well done. Go back to your overview.\" //kZzzt..//.";
+        primeInt = 13;
     }
     public void SceneChange1()
     {
