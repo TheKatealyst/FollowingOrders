@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     public static int playerStat1;
+    public static int CheckDiagnostics = 0;
     // public TMP_Text textGameObject;
 
     // void Start () { UpdateScore (); }

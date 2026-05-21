@@ -229,6 +229,7 @@ public class Scene2Panel : MonoBehaviour
     }
     public void Choice1cFunct()
     {
+        GameManagerScript.CheckDiagnostics += 1;
         CheckedOutFunctions += 1;
         ChoiceCargo.SetActive(false);
         ChoiceMaintenance.SetActive(false);
