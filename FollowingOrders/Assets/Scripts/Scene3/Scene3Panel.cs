@@ -142,8 +142,8 @@ public class Scene3Panel : MonoBehaviour
         {
             Return2ControlButton.SetActive(false);
             CharBox.SetActive(false);
-            nextButton.SetActive(false);
-            allowSpace = false;
+            nextButton.SetActive(true);
+            allowSpace = true;
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
             Char1speech.text = "A moment later a text appears at the top: \"Possible sabotage detected\"";
@@ -231,8 +231,8 @@ public class Scene3Panel : MonoBehaviour
         ChoiceRoute.SetActive(false);
         primeInt = 19;
         CharBox.SetActive(false);
-        nextButton.SetActive(true);
-        allowSpace = true;
+        nextButton.SetActive(false);
+        allowSpace = false;
         DialogueDisplay.SetActive(true);
         Char1name.text = "";
         Char1speech.text = "The green coloured monitor displays the information on the cargo:\r\n\r\n''Capacity:'' 823/1.000.\r\n''Weight:'' 57.610kg/100.000kg.\r\n''Activity:'' High/stable.\r\n";
