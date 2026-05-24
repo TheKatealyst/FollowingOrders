@@ -232,7 +232,6 @@ public class Scene4Journey : MonoBehaviour
         }
         else if (primeInt == 40)
         {
-            ChoiceOpen.SetActive(false);
             //Consequences of resisting.
             CharBox.SetActive(false);
             DialogueDisplay.SetActive(true);
@@ -359,6 +358,8 @@ public class Scene4Journey : MonoBehaviour
     {
         primeInt = 19;
         ChoiceCamera.SetActive(false);
+        ChoiceOpen.SetActive(false);
+        ChoiceSetFreeAttempt.SetActive(false);
         ChoiceLockDown.SetActive(false);
         Choice1a.SetActive(false);
         CharBox.SetActive(false);
@@ -386,6 +387,7 @@ public class Scene4Journey : MonoBehaviour
     public void ChoiceOpenFunct()
     {
         primeInt = 39;
+        ChoiceOpen.SetActive(false);
         ChoiceLockDown.SetActive(false);
         Choice1a.SetActive(false);
         CharBox.SetActive(false);
