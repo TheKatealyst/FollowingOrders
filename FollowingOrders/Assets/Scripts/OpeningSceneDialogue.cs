@@ -91,6 +91,6 @@ public class OpeningSceneDialogue : MonoBehaviour
     }
     public void SceneChange1()
     {
-        SceneManager.LoadScene("Scene2a");
+        SceneManager.LoadScene("Scene1-Train");
     }
 }

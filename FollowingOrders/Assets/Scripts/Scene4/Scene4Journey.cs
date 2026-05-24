@@ -410,11 +410,11 @@ public class Scene4Journey : MonoBehaviour
     public void SceneChange1()
     {
         //Change to resistance ending.
-        SceneManager.LoadScene("Scene1A");
+        SceneManager.LoadScene("Scene5Resisted");
     }
     public void SceneChange2()
     {
         //Change to obedience ending.
-        SceneManager.LoadScene("Scene2b");
+        SceneManager.LoadScene("Scene5Obeyed");
     }
 }

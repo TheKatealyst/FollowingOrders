@@ -158,6 +158,6 @@ public class Scene3Journey : MonoBehaviour
     }
     public void SceneChange2()
     {
-        SceneManager.LoadScene("Scene2b");
+        SceneManager.LoadScene("Scene3.1-Soldiers");
     }
 }

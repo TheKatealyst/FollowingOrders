@@ -90,6 +90,8 @@ public class ScriptScene5Resisted : MonoBehaviour
         }
         else if (primeInt == 3)
         {
+            ArtBGBlack.SetActive(false);
+            ArtBGTrain.SetActive(true);
             CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
@@ -296,6 +298,7 @@ public class ScriptScene5Resisted : MonoBehaviour
     public void ChoiceLadyFunct()
     {
         primeInt = 9;
+        ChoiceSilence.SetActive(false);
         ChoiceLady.SetActive(false);
         ChoiceMan.SetActive(false);
         CharBox.SetActive(false);
@@ -308,6 +311,7 @@ public class ScriptScene5Resisted : MonoBehaviour
     public void ChoiceManFunct()
     {
         primeInt = 19;
+        ChoiceSilence.SetActive(false);
         ChoiceLady.SetActive(false);
         ChoiceMan.SetActive(false);
         CharBox.SetActive(false);
@@ -338,6 +342,6 @@ public class ScriptScene5Resisted : MonoBehaviour
 
     public void SceneChangeFunct()
     {
-
+        SceneManager.LoadScene("SceneEnd");
     }
 }

@@ -309,6 +309,6 @@ public class Scene1Panel : MonoBehaviour
     }
     public void SceneChange1()
     {
-        SceneManager.LoadScene("Scene2b");
+        SceneManager.LoadScene("Scene2-JourneyToM");
     }
 }

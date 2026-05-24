@@ -144,6 +144,6 @@ public class Scene1TrainDialogue : MonoBehaviour
     }
     public void SceneChange2()
     {
-        SceneManager.LoadScene("Scene2b");
+        SceneManager.LoadScene("Scene1A-Panel");
     }
 }

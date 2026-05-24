@@ -126,10 +126,10 @@ public class Scene2JourneyToM : MonoBehaviour
 
     public void SceneChange1()
     {
-
+        SceneManager.LoadScene("Scene2.1-LoadingCargo");
     }
     public void SceneChange2()
     {
-        SceneManager.LoadScene("Scene2b");
+        SceneManager.LoadScene("Scene4Journey");
     }
 }
