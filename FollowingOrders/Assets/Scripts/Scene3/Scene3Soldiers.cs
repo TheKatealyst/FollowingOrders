@@ -160,7 +160,7 @@ public class Scene3Soldiers : MonoBehaviour
 
     public void SceneChange1()
     {
-        SceneManager.LoadScene("Scene4Journey");
+        SceneManager.LoadScene("SceneAltEnding");
 
     }
     public void SceneChange2()
