@@ -92,6 +92,7 @@ public class Scene2Panel : MonoBehaviour
         }
         else if (primeInt == 10)
         {
+            //Map
             ChoiceMaintenance.SetActive(false);
             ChoiceCargo.SetActive(false);
             ChoiceRoute.SetActive(false);
@@ -104,6 +105,7 @@ public class Scene2Panel : MonoBehaviour
         }
         else if (primeInt == 11)
         {
+            //Map
             CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
@@ -114,6 +116,7 @@ public class Scene2Panel : MonoBehaviour
 
         else if (primeInt == 12)
         {
+            //Map
             WBButton.SetActive(true);
             AStationButton.SetActive(true);
             CharBox.SetActive(true);
@@ -125,6 +128,7 @@ public class Scene2Panel : MonoBehaviour
         }
         else if (primeInt == 20)
         {
+            //Cargo
             LockDownButton.SetActive(true);
             Return2ControlButton.SetActive(true);
             ChoiceMaintenance.SetActive(false);
@@ -139,6 +143,7 @@ public class Scene2Panel : MonoBehaviour
         }
         else if (primeInt == 21)
         {
+            //Cargo lockdown
             Return2ControlButton.SetActive(false);
             LockDownButton.SetActive(false);
             CharBox.SetActive(false);
@@ -150,6 +155,7 @@ public class Scene2Panel : MonoBehaviour
         }
         else if (primeInt == 22)
         {
+            //Cargo lockdown
             Return2ControlButton.SetActive(true);
             CharBox.SetActive(true);
             nextButton.SetActive(false);
@@ -201,6 +207,7 @@ public class Scene2Panel : MonoBehaviour
     // FUNCTIONS FOR BUTTONS TO ACCESS (Choice #1 and SceneChanges)
     public void Choice1aFunct()
     {
+        //Map
         CheckedOutFunctions += 1;
         ChoiceCargo.SetActive(false);
         ChoiceMaintenance.SetActive(false);
@@ -215,6 +222,7 @@ public class Scene2Panel : MonoBehaviour
     }
     public void Choice1bFunct()
     {
+        //Cargo
         CheckedOutFunctions += 1;
         ChoiceCargo.SetActive(false);
         ChoiceMaintenance.SetActive(false);
@@ -229,6 +237,7 @@ public class Scene2Panel : MonoBehaviour
     }
     public void Choice1cFunct()
     {
+        //Maintenance
         GameManagerScript.CheckDiagnostics += 1;
         CheckedOutFunctions += 1;
         ChoiceCargo.SetActive(false);
@@ -254,6 +263,7 @@ public class Scene2Panel : MonoBehaviour
     }
     public void ReturnFunct()
     {
+        LockDownButton.SetActive(false);
         Return2ControlButton.SetActive(false);
         ChoiceCargo.SetActive(true);
         ChoiceMaintenance.SetActive(true);

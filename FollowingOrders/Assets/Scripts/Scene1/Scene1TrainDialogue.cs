@@ -77,8 +77,7 @@ public class Scene1TrainDialogue : MonoBehaviour
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
             Char1speech.text = "";
-            Char2speech.text = "You find yourself in the driver's cab of a large train." +
-                "The radio begins emitting static buzz.";
+            Char2speech.text = "\"You find yourself in the driver's cab of a large train.\" \"The radio begins emitting static buzz.\"";
             Choice1a.SetActive(true); // function Choice1aFunct()
         }
         else if (primeInt == 2)

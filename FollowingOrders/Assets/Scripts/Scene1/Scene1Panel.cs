@@ -76,7 +76,7 @@ public class Scene1Panel : MonoBehaviour
             allowSpace = true;
             DialogueDisplay.SetActive(true);
             Char1name.text = "Commanding Officer";
-            Char1speech.text = "//KwZzwt..// \"Welcome to your control deck, this will be your own seat of power!\"\"Here are the functions you are able to perform from here:\"\r\n";
+            Char1speech.text = "//KwZzwt..// \"Welcome to your control deck, this will be your own seat of power!\" \"Here are the functions you are able to perform from here:\"\r\n";
         }
         else if (primeInt == 2)
         {
