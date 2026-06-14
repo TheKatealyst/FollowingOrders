@@ -12,13 +12,12 @@ public class ScriptScene5Resisted : MonoBehaviour
     // For more character images / buttons, copy & renumber the variables:
     public int primeInt = 1;        // This integer drives game progress!
     public TMP_Text Char1name;
+    public TMP_Text Char2name;
     public TMP_Text Char1speech;
     public GameObject ScrollViewChar1;
     public GameObject DialogueDisplay;
-    //public GameObject ArtChar1a;
-    //public GameObject ArtChar1b;
-    //public GameObject ArtChar1c;
-    //public GameObject ArtChar2;
+    public GameObject ArtWoman;
+    public GameObject ArtMan;
     public GameObject ArtBGBlack;
     public GameObject ArtBGTrain;
     public GameObject ChoiceLady;
@@ -34,6 +33,8 @@ public class ScriptScene5Resisted : MonoBehaviour
     // Set initial visibility. Added images or buttons need to also be SetActive(false);
     void Start()
     {
+        ArtMan.SetActive(false);
+        ArtWoman.SetActive(false);
         CharBox.SetActive(false);
         DialogueDisplay.SetActive(false);
         ArtBGBlack.SetActive(true);
@@ -135,76 +136,82 @@ public class ScriptScene5Resisted : MonoBehaviour
 
         else if (primeInt == 10)
         {
-            CharBox.SetActive(false);
+            CharBox.SetActive(true);
+            ArtMan.SetActive(false);
+            ArtWoman.SetActive(true);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
+            Char2name.text = "Iqra";
             Char1speech.text = "She's scared. She was born in this country, same as you.\r\nThe men in black said she and her muslim family needed to go back to her country.\r\n";
         }
         else if (primeInt == 11)
         {
-            CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
+            Char2name.text = "Iqra";
             Char1speech.text = "Her religion was vilified, they were called: \"savages who don't adhere to our values\".";
         }
         else if (primeInt == 12)
         {
-            CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
+            Char2name.text = "Iqra";
             Char1speech.text = "Her partner tried to help them escape. He was shot before her eyes, the officer who did it said he was reaching for a gun.";
         }
         else if (primeInt == 13)
         {
-            CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
+            Char2name.text = "Iqra";
             Char1speech.text = "Her husband was unarmed.";
         }
         else if (primeInt == 14)
         {
             ChoiceMan.SetActive(true);
             ChoiceSilence.SetActive(true);
-            CharBox.SetActive(false);
             nextButton.SetActive(false);
             allowSpace = false;
             DialogueDisplay.SetActive(true);
             Char1name.text = "";
+            Char2name.text = "Iqra";
             Char1speech.text = "The baby falls asleep.";
         }
         else if (primeInt == 20)
         {
-            CharBox.SetActive(false);
+            CharBox.SetActive(true);
+            ArtMan.SetActive(true);
+            ArtWoman.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
-            Char1name.text = "";
+            Char1name.text = "Johannes";
+            Char2name.text = "";
             Char1speech.text = "He tells you how he and his husband were rounded up by men in black, and says their only crime was loving each other.";
         }
         else if (primeInt == 21)
         {
-            CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
-            Char1name.text = "";
+            Char1name.text = "Johannes";
+            Char2name.text = "";
             Char1speech.text = "Tears run down his face, he drinks them up as soon as they reach his mouth..";
         }
         else if (primeInt == 22)
         {
-            CharBox.SetActive(false);
             nextButton.SetActive(true);
             allowSpace = true;
             DialogueDisplay.SetActive(true);
-            Char1name.text = "";
+            Char1name.text = "Johannes";
+            Char2name.text = "";
             Char1speech.text = "He says he doesn't know where his partner is.";
         }
 
@@ -212,11 +219,11 @@ public class ScriptScene5Resisted : MonoBehaviour
         {
             ChoiceLady.SetActive(true);
             ChoiceSilence.SetActive(true);
-            CharBox.SetActive(false);
             nextButton.SetActive(false);
             allowSpace = false;
             DialogueDisplay.SetActive(true);
-            Char1name.text = "";
+            Char1name.text = "Johannes";
+            Char2name.text = "";
             Char1speech.text = "They were put on different trains..";
         }
         else if (primeInt == 30)
@@ -298,10 +305,12 @@ public class ScriptScene5Resisted : MonoBehaviour
     public void ChoiceLadyFunct()
     {
         primeInt = 9;
+        CharBox.SetActive(false);
+        ArtMan.SetActive(false);
+        ArtWoman.SetActive(false);
         ChoiceSilence.SetActive(false);
         ChoiceLady.SetActive(false);
         ChoiceMan.SetActive(false);
-        CharBox.SetActive(false);
         nextButton.SetActive(true);
         allowSpace = true;
         DialogueDisplay.SetActive(true);
@@ -311,6 +320,8 @@ public class ScriptScene5Resisted : MonoBehaviour
     public void ChoiceManFunct()
     {
         primeInt = 19;
+        ArtMan.SetActive(false);
+        ArtWoman.SetActive(false);
         ChoiceSilence.SetActive(false);
         ChoiceLady.SetActive(false);
         ChoiceMan.SetActive(false);
@@ -324,6 +335,8 @@ public class ScriptScene5Resisted : MonoBehaviour
     public void ChoiceSitInSilenceFunct()
     {
         primeInt = 29;
+        ArtMan.SetActive(false);
+        ArtWoman.SetActive(false);
         ChoiceLady.SetActive(false);
         ChoiceMan.SetActive(false);
         ChoiceTalkToThem.SetActive(false);
