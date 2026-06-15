@@ -5,25 +5,20 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class GameManagerScript : MonoBehaviour
 {
     public static int playerStat1;
     public static int CheckDiagnostics = 0;
+    [SerializeField] Animator transitionAnim;
+
     // public TMP_Text textGameObject;
 
     // void Start () { UpdateScore (); }
 
     void Update()
     {
-        //NOTE: This quit functionality should not be needed:
-        // if (Input.GetKey("escape")){
-        //         Application.Quit();
-        // }
 
-        // Stat tester:
-        //if (Input.GetKey("p")){
-        //       Debug.Log("Player Stat = " + playerStat1);
-        //}
     }
 
     // void UpdateScore () {
@@ -31,9 +26,16 @@ public class GameManagerScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("OpeningScene");
+        StartCoroutine(LoadScene1());
     }
 
+    IEnumerator LoadScene1()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("OpeningScene");
+        transitionAnim.SetTrigger("Start");
+    }
     public void OpenCredits()
     {
         SceneManager.LoadScene("SceneCredits");

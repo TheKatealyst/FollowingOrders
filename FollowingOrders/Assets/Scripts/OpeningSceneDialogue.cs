@@ -23,7 +23,8 @@ public class OpeningSceneDialogue : MonoBehaviour
     public GameObject nextButton;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
-
+    //Animator
+    [SerializeField] Animator transitionAnim;
     // Set initial visibility. Added images or buttons need to also be SetActive(false);
     void Start()
     {
@@ -91,6 +92,14 @@ public class OpeningSceneDialogue : MonoBehaviour
     }
     public void SceneChange1()
     {
+        StartCoroutine(LoadScene1());
+    }
+
+    IEnumerator LoadScene1()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene1-Train");
+        transitionAnim.SetTrigger("Start");
     }
 }
