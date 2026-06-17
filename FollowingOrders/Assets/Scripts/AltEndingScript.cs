@@ -30,6 +30,7 @@ public class AltEndingScript : MonoBehaviour
     public GameObject NextScene2Button;
     public GameObject nextButton;
     public GameObject CharBox;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -157,9 +158,16 @@ public class AltEndingScript : MonoBehaviour
     {
         Next();
     }
+
     public void SceneChange1()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("SceneEnd");
-
+        transitionAnim.SetTrigger("Start");
     }
 }

@@ -26,6 +26,8 @@ public class Scene1Panel : MonoBehaviour
     public GameObject MstationButton;
     public GameObject RhabourButton;
     public GameObject TAtempLocButton;
+    [SerializeField] Animator transitionAnim;
+
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -307,8 +309,16 @@ public class Scene1Panel : MonoBehaviour
         Char1speech.text = "\"Well done. Go back to your overview.\" //kZzzt..//.";
         primeInt = 13;
     }
+
     public void SceneChange1()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene2-JourneyToM");
+        transitionAnim.SetTrigger("Start");
     }
 }

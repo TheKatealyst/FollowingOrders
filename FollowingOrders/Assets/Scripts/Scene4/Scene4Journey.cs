@@ -31,6 +31,7 @@ public class Scene4Journey : MonoBehaviour
     public GameObject NextSceneObedienceButton;
     public GameObject nextButton;
     public GameObject CharBox;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -407,14 +408,29 @@ public class Scene4Journey : MonoBehaviour
         Next();
     }
 
+
     public void SceneChange1()
     {
-        //Change to resistance ending.
+        //Change to resist ending.
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene5Resisted");
+        transitionAnim.SetTrigger("Start");
     }
     public void SceneChange2()
     {
         //Change to obedience ending.
+        StartCoroutine(LoadScene2());
+    }
+    IEnumerator LoadScene2()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene5Obeyed");
+        transitionAnim.SetTrigger("Start");
     }
 }

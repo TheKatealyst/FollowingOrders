@@ -28,6 +28,7 @@ public class Scene2_1loadingCargo : MonoBehaviour
     public GameObject NextScene2Button;
     public GameObject nextButton;
     public GameObject CharBox;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -183,16 +184,28 @@ public class Scene2_1loadingCargo : MonoBehaviour
         Char1name.text = "";
         Char1speech.text = "The green coloured monitor displays the doors opening.";
     }
-    public void Choice1bFunct()
-    {
-    }
 
     public void SceneChange1()
     {
-        SceneManager.LoadScene("SceneAltEnding");
+        StartCoroutine(LoadScene());
     }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("SceneAltEnding");
+        transitionAnim.SetTrigger("Start");
+    }
+
     public void SceneChange2()
     {
+        StartCoroutine(LoadScene2());
+    }
+    IEnumerator LoadScene2()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene2.2-Panel2");
+        transitionAnim.SetTrigger("Start");
     }
 }

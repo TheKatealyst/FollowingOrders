@@ -28,6 +28,7 @@ public class Scene3Journey : MonoBehaviour
     public GameObject NextScene2Button;
     public GameObject nextButton;
     public GameObject CharBox;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -145,19 +146,15 @@ public class Scene3Journey : MonoBehaviour
     }
 
     // FUNCTIONS FOR BUTTONS TO ACCESS (Choice #1 and SceneChanges)
-    public void Choice1aFunct()
-    {
-    }
-    public void Choice1bFunct()
-    {
-    }
-
-    public void SceneChange1()
-    {
-
-    }
     public void SceneChange2()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene3.1-Soldiers");
+        transitionAnim.SetTrigger("Start");
     }
 }

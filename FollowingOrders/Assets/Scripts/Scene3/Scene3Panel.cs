@@ -26,6 +26,7 @@ public class Scene3Panel : MonoBehaviour
     public GameObject WBButton;
     public GameObject LockDownButton;
     public GameObject AlertButton;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -290,9 +291,15 @@ public class Scene3Panel : MonoBehaviour
         Char1speech.text = "\"On to our final destination, the creatures will be safely locked up afterwards.\"";
         primeInt = 13;
     }
-
     public void SceneChange1()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene4Journey");
+        transitionAnim.SetTrigger("Start");
     }
 }

@@ -19,10 +19,6 @@ public class Scene1TrainDialogue : MonoBehaviour
     //public TMP_Text Char3name;
     //public TMP_Text Char3speech;
     public GameObject DialogueDisplay;
-    //public GameObject ArtChar1a;
-    //public GameObject ArtChar1b;
-    //public GameObject ArtChar1c;
-    //public GameObject ArtChar2;
     public GameObject ArtBG1;
     public GameObject Choice1a;
     public GameObject Choice1b;
@@ -32,6 +28,7 @@ public class Scene1TrainDialogue : MonoBehaviour
     public GameObject CharBox;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
+    [SerializeField] Animator transitionAnim;
 
     // Set initial visibility. Added images or buttons need to also be SetActive(false);
     void Start()
@@ -143,6 +140,13 @@ public class Scene1TrainDialogue : MonoBehaviour
     }
     public void SceneChange2()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene1A-Panel");
+        transitionAnim.SetTrigger("Start");
     }
 }

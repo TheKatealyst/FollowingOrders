@@ -38,13 +38,27 @@ public class GameManagerScript : MonoBehaviour
     }
     public void OpenCredits()
     {
+        StartCoroutine(LoadScene2());
+    }
+    IEnumerator LoadScene2()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("SceneCredits");
+        transitionAnim.SetTrigger("Start");
     }
 
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        StartCoroutine(LoadScene3());
+    }
+    IEnumerator LoadScene3()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("MainMenu");
+        transitionAnim.SetTrigger("Start");
     }
 
     public void QuitGame()

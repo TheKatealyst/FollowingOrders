@@ -26,6 +26,7 @@ public class Scene2Panel : MonoBehaviour
     public GameObject WBButton;
     public GameObject AStationButton;
     public GameObject LockDownButton;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -297,8 +298,16 @@ public class Scene2Panel : MonoBehaviour
         Char1speech.text = "\"Well done. Get ready to depart!.\" //kZzzt..//.";
         primeInt = 13;
     }
+
     public void SceneChange1()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scene3-JourneyToA");
+        transitionAnim.SetTrigger("Start");
     }
 }

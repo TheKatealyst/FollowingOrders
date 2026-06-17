@@ -27,6 +27,7 @@ public class ScriptScene5Resisted : MonoBehaviour
     public GameObject NextSceneButton;
     public GameObject nextButton;
     public GameObject CharBox;
+    [SerializeField] Animator transitionAnim;
     //public AudioSource audioSource1;
     private bool allowSpace = true;
 
@@ -355,6 +356,13 @@ public class ScriptScene5Resisted : MonoBehaviour
 
     public void SceneChangeFunct()
     {
+        StartCoroutine(LoadScene());
+    }
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("SceneEnd");
+        transitionAnim.SetTrigger("Start");
     }
 }
