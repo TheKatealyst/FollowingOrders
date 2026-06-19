@@ -33,4 +33,9 @@ public class AudioManagerScript : MonoBehaviour
     {
         SFXClip2.Play();
     }
+
+    public void PlaySFX3()
+    {
+        SFXClip3.Play();
+    }
 }
