@@ -20,7 +20,17 @@ public class AudioManagerScript : MonoBehaviour
         }
         if (Input.GetKeyDown("7"))
         {
-            SFXClip2.Play();
+            SFXClip3.Play();
         }
+    }
+
+    public void PlaySFX1()
+    {
+        SFXClip1.Play();
+    }
+
+    public void PlaySFX2()
+    {
+        SFXClip2.Play();
     }
 }
