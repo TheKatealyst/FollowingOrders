@@ -255,6 +255,7 @@ public class Scene3Panel : MonoBehaviour
     }
     public void ReturnFunct()
     {
+        LockDownButton.SetActive(false);
         Return2ControlButton.SetActive(false);
         ChoiceCargo.SetActive(true);
         ChoiceMaintenance.SetActive(true);
