@@ -11,7 +11,9 @@ public class Scene1Panel : MonoBehaviour
     // These are the script variables.
     // For more character images / buttons, copy & renumber the variables:
     public int primeInt = 1;        // This integer drives game progress!
-    public int CheckedOutFunctions = 0; //This interger checks the players tutorial porgress.
+    public int CheckedOutCargo = 0; //This interger checks the players tutorial porgress.
+    public int CheckedOutMain = 0; //This interger checks the players tutorial porgress.
+    public int CheckedOutRoute = 0; //This interger checks the players tutorial porgress.
     public TMP_Text Char1name;
     public TMP_Text Char1speech;
     public GameObject DialogueDisplay;
@@ -217,7 +219,7 @@ public class Scene1Panel : MonoBehaviour
     // FUNCTIONS FOR BUTTONS TO ACCESS (Choice #1 and SceneChanges)
     public void Choice1aFunct()
     {
-        CheckedOutFunctions += 1;
+        CheckedOutRoute += 1;
         ChoiceCargo.SetActive(false);
         ChoiceMaintenance.SetActive(false);
         ChoiceRoute.SetActive(false);
@@ -231,7 +233,7 @@ public class Scene1Panel : MonoBehaviour
     }
     public void Choice1bFunct()
     {
-        CheckedOutFunctions += 1;
+        CheckedOutCargo += 1;
         ChoiceCargo.SetActive(false);
         ChoiceMaintenance.SetActive(false);
         ChoiceRoute.SetActive(false);
@@ -245,7 +247,7 @@ public class Scene1Panel : MonoBehaviour
     }
     public void Choice1cFunct()
     {
-        CheckedOutFunctions += 1;
+        CheckedOutMain += 1;
         ChoiceCargo.SetActive(false);
         ChoiceMaintenance.SetActive(false);
         ChoiceRoute.SetActive(false);
@@ -290,7 +292,7 @@ public class Scene1Panel : MonoBehaviour
         DialogueDisplay.SetActive(true);
         Char1name.text = "Commanding Officer";
         Char1speech.text = "//..KwzzTz// \"Alright, Be sure to examine your other equipment.\"";
-        if (CheckedOutFunctions >= 3)
+        if (CheckedOutCargo >= 1 && CheckedOutMain >= 1 && CheckedOutRoute >= 1)
         {
             Next();
         }
